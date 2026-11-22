@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRO Finances</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <h2 class="logo">CRO<span>.</span></h2>
+        <p class="subtitle">FINANCES</p>
+
+        <nav>
+            <a href="#" class="active">▦ Dashboard</a>
+            <a href="#">↗ Movimientos</a>
+            <a href="#">◷ Historial</a>
+            <a href="#">◎ Presupuestos</a>
+            <a href="#">⚙ Configuración</a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <p>Tu dinero, bajo control.</p>
+            <small>CRO Finances © 2026</small>
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <div>
+                <p class="welcome">PANEL GENERAL</p>
+                <h1>Dashboard</h1>
+            </div>
+            <div class="profile">U</div>
+        </header>
+
+        <section class="intro">
+            <div>
+                <h2>Bienvenido a CRO.</h2>
+                <p>Este es el resumen de tus finanzas personales.</p>
+            </div>
+            <span class="date" id="current-date"></span>
+        </section>
+
+        <section class="stats">
+
+            <div class="stat-card">
+                <p>Saldo disponible</p>
+                <h2 id="balance">$0.00</h2>
+                <span>Balance actual</span>
+            </div>
+
+            <div class="stat-card">
+                <p>Ingresos</p>
+                <h2 id="income">$0.00</h2>
+                <span class="positive">Dinero recibido</span>
+            </div>
+
+            <div class="stat-card">
+                <p>Gastos</p>
+                <h2 id="expenses">$0.00</h2>
+                <span class="negative">Dinero utilizado</span>
+            </div>
+
+            <div class="stat-card">
+                <p>Movimientos</p>
+                <h2 id="total-movements">0</h2>
+                <span>Registros totales</span>
+            </div>
+
+        </section>
+
+        <section class="content-grid">
+
+            <div class="panel">
+                <div class="panel-heading">
+                    <div>
+                        <h3>Nuevo movimiento</h3>
+                        <p>Registra un ingreso o un gasto.</p>
+                    </div>
+                </div>
+
+                <form id="movement-form">
+
+                    <label>Tipo de movimiento</label>
+                    <select id="type" required>
+                        <option value="income">Ingreso</option>
+                        <option value="expense">Gasto</option>
+                    </select>
+
+                    <label>Descripción</label>
+                    <input type="text" id="description" placeholder="Ej. Compra de alimentos" required>
+
+                    <label>Cantidad (MXN)</label>
+                    <input type="number" id="amount" placeholder="0.00" min="0.01" step="0.01" required>
+
+                    <label>Categoría</label>
+                    <select id="category">
+                        <option>General</option>
+                        <option>Alimentación</option>
+                        <option>Transporte</option>
+                        <option>Educación</option>
+                        <option>Entretenimiento</option>
+                        <option>Salario</option>
+                        <option>Otros</option>
+                    </select>
+
+                    <button type="submit">+ Registrar movimiento</button>
+
+                </form>
+            </div>
+
+            <div class="panel">
+                <div class="panel-heading">
+                    <div>
+                        <h3>Actividad reciente</h3>
+                        <p>Tus últimos movimientos.</p>
+                    </div>
+                </div>
+
+                <div id="movement-list" class="movement-list">
+                    <p class="empty">Todavía no tienes movimientos registrados.</p>
+                </div>
+            </div>
+
+        </section>
+
+        <footer>
+            CRO FINANCES · Controla tu dinero con claridad.
+        </footer>
+
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
